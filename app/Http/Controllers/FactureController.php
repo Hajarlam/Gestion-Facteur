@@ -38,12 +38,21 @@ public function show(Request $request)
     $devisController = new DevisController();
     $devis = $devisController->getDevis(); // Modifier cette ligne si nécessaire
  
+    $articleController = new ArticleController();
+    $article = $articleController->getArticle();
+
+    $serviceController = new ServiceController();
+    $service = $serviceController->getService();
+
+
     $user = Auth::user();
     $data = [
         'factures' => $factures,
         'user' => $user,
         'devis' => $devis,
         'emetteur' => $emetteur, 
+        'article' => $article, 
+        'service' => $service, 
 
     ];
     // Use the make method to create an instance of PDF

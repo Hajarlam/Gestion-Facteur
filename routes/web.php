@@ -11,6 +11,7 @@ use App\Http\Controllers\DevisController;
 use App\Http\Controllers\QuittanceController;
 use App\Http\Controllers\EmetteurController;
 use App\Http\Controllers\TenantSocieteController;
+use App\Http\Controllers\ServiceController;
 
 
 /* 
@@ -56,9 +57,14 @@ Route::get('/emetteurs', [EmetteurController::class, 'index'])->name('emetteurs'
 Route::post('/emetteurs/store', [EmetteurController::class, 'store'])->name('emetteurs.store');
 Route::get('/generate-pdf', [EmetteurController::class, 'generatePdf'])->name('generate.pdf');
 Route::post('/devis', [DevisController::class, 'store'])->name('devis.store');
+Route::resource('ajouter_service', ServiceController::class);
+Route::get('/servaices', [ServiceController::class, 'store'])->name('services.store');
+Route::resource('services', ServiceController::class);
 
 Route::resource('tenant_societes', TenantSocieteController::class);
 Route::resource('devi', DevisController::class);
+Route::resource('articles', ArticleController::class);
+
 
 Route::prefix('admin')->middleware('web')->group(function () {
     Route::get('/ajouter_produit', function () {

@@ -240,7 +240,7 @@ N° Téléphone : {{ $emetteur->Telephone }} <br>
         <!-- Table Head -->
         <thead>
             <tr>
-                <th>Désignation (Catégorie ou Pack)</th>
+                <th>Désignation </th>
                 <th>Prix Unitaire</th>
                 <th>Quantité</th>
                 <th>Montant (HT/DHS)</th>
@@ -251,25 +251,25 @@ N° Téléphone : {{ $emetteur->Telephone }} <br>
         <!-- Table Body -->
         <tbody>
         <tr>
-                <td class="article-cell">Article ou Service 1</td>
+                <td class="article-cell">Article</td>
                 <!-- Add other columns as needed -->
             </tr>
     
     <table class="article">
         <tr>
-            <th>Article1 ou Composant </th>
+            <th>{{ $article->Nom }} </th>
             <th></th>
             <th></th>
             <th></th>
             <th></th>
             <th></th>
             <th></th>
-            <th>1234</th>
+            <th>{{ $article->PrixUnitaire_HT }}</th>
             <th></th>
-            <td>10</td>
+            <td>{{ $article->Quantite }}</td>
             <th></th>
             <th></th>
-            <td>M1=PrixUnitaire*Quantité</td>
+            <td>{{ $article->PrixUnitaire_HT * $article->Quantite }}</td>
         </tr>
         <tr>
             <th>- </th>
@@ -287,7 +287,7 @@ N° Téléphone : {{ $emetteur->Telephone }} <br>
             <th>-</th>
         </tr>
         <tr>
-            <th>ArticleN ou Composant </th>
+            <th>-</th>
             <th></th>
             <th></th>
             <th></th>
@@ -308,26 +308,26 @@ N° Téléphone : {{ $emetteur->Telephone }} <br>
     <!-- Table Body -->
     <tbody>
     <tr>
-            <td class="article-cell">Article1 ou Service2</td>
+            <td class="article-cell">Service</td>
             <!-- Add other columns as needed -->
         </tr>
 
 <table class="article">
-    <tr>
-        <th>Article1 ou Composant2 </th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th>1234</th>
-        <th></th>
-        <td>10</td>
-        <th></th>
-        <th></th>
-        <td>M1=PrixUnitaire*Quantité</td>
-    </tr>
+<tr>
+            <th>{{ $service->Nom }} </th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>{{ $service->PrixUnitaire_HT }}</th>
+            <th></th>
+            <td>{{ $article->Quantite }}</td>
+            <th></th>
+            <th></th>
+            <td>{{ $service->PrixUnitaire_HT * $article->Quantite }}</td>
+        </tr>
     <tr>
         <th>- </th>
         <th></th>

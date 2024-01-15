@@ -1,6 +1,70 @@
 @php use Illuminate\Support\Facades\Route; @endphp
 <h1></h1>
+<style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+        }
 
+        h1 {
+            color: #333;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        a {
+            display: block;
+            margin-top: 10px;
+            text-decoration: none;
+            background-color: #008CBA;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+    </style>
             <ul class="nav flex-column">
                 <li class="nav-item">
                     <h4>
@@ -124,13 +188,17 @@
                             </svg>Produit</a></h4>
     <div class="collapse" id="productAccordion">
         <ul class="nav flex-column"><h5>
-            <li class="nav-item" style="margin-left: 10px;">
-                <a class="nav-link {{ Route::is('categories.index') ? 'bg-primary text-white' : '' }}"
-                   href="{{route('categories.index')}}">Article</a>
+        <li class="nav-item" style="margin-left: 10px;">
+                <a class="nav-link {{ Route::is('articles.index') ? 'bg-primary text-white' : '' }}"
+                   href="{{route('articles.index')}}">Article</a>
             </li>
             <li class="nav-item" style="margin-left: 10px;">
-                <a class="nav-link {{ Route::is('add_service') ? 'bg-primary text-white' : '' }}"
-                   href="{{route('add_service')}}">Service</a>
+                <a class="nav-link {{ Route::is('categories.index') ? 'bg-primary text-white' : '' }}"
+                   href="{{route('categories.index')}}">Catégorie</a>
+            </li>
+            <li class="nav-item" style="margin-left: 10px;">
+                <a class="nav-link {{ Route::is('services.index') ? 'bg-primary text-white' : '' }}"
+                   href="{{route('services.index')}}">Service</a>
             </li></h5>
         </ul>
     </div>
